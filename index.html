@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Conta Stone</title>
+</head>
+<body class="img-fluid">
+    <section id="login">
+    <section id="loginCard">
+        <header class="header">
+            <img id="stoneLogo" alt="logo da Stone" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Logo-Stone.svg/1280px-Logo-Stone.svg.png"/>
+        </header>
+        <main class="content">
+            <div id="firstInputContainer">
+                <label id="emailOrCpf" for="inputEmailCPF" class="inputLabel">E-mail ou CPF</label>
+                <input id="inputEmailCPF" type="text" placeholder="Digite seu e-mail ou CPF">
+            </div>
+            <div id="secondInputContainer">                
+                <label id="password" for="inputPassword" class="inputLabel">Senha</label>
+                <input id="inputPassword" type="text" placeholder="Digite sua senha">
+            </div>
+        </main>
+        <footer class="secondInputContainer">
+            <div id="captchaContainer">
+                <input id="captcha" type="checkbox"/>
+                <label id="captchaLabel" for="captcha">Não sou um robô</label>
+            </div>
+            <div class="sendButtonContainer">
+                <button id='sendButton' onclick="enviarForm()"> Entrar </button>
+            </div>
+            <a id="forgotPassword" href="#">Esqueci minha senha</a>
+        </footer>
+    </section>
+    <section id="notStoneYetContainer">
+        <p>Ainda não é Stone? 
+            <a id="openYourAccountLink" href="#">Abra sua conta</a> 
+        </p>
+        
+    </section>
+</section>
+
+<body>
+  
+     <script src="./app/model/FixModel-imdb.js"></script>
+</body>
+</html>
