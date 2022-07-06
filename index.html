@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script> 
+
     <title>Conta Stone</title>
 </head>
 <body class="img-fluid">
@@ -14,24 +16,23 @@
         <header class="header">
             <img id="stoneLogo" alt="logo da Stone" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Logo-Stone.svg/1280px-Logo-Stone.svg.png"/>
         </header>
-        <main class="content">
-            <div id="firstInputContainer">
-                <label id="emailOrCpf" for="inputEmailCPF" class="inputLabel">E-mail ou CPF</label>
-                <input id="inputEmailCPF" type="text" placeholder="Digite seu e-mail ou CPF">
-            </div>
-            <div id="secondInputContainer">                
-                <label id="password" for="inputPassword" class="inputLabel">Senha</label>
-                <input id="inputPassword" type="text" placeholder="Digite sua senha">
-            </div>
-        </main>
-        <footer class="secondInputContainer">
-            <div id="captchaContainer">
-                <input id="captcha" type="checkbox"/>
-                <label id="captchaLabel" for="captcha">Não sou um robô</label>
-            </div>
-            <div class="sendButtonContainer">
-                <button id='sendButton' onclick="enviarForm()"> Entrar </button>
-            </div>
+        <form id="register" method="post">
+            <main class="content">
+                <div id="firstInputContainer">
+                    <label id="emailOrCpf" for="inputEmailCPF" class="inputLabel">E-mail ou CPF</label>
+                    <input id="inputEmailCPF" type="text" placeholder="Digite seu e-mail ou CPF">
+                </div>
+                <div id="secondInputContainer">                
+                    <label id="password" for="inputPassword" class="inputLabel">Senha</label>
+                    <input id="inputPassword" type="text" placeholder="Digite sua senha">
+                </div>
+            </main>
+            <footer class="secondInputContainer">
+                <div id='recaptcha' class="g-recaptcha" data-sitekey="6LfC_c0gAAAAAHNA4LQYUh9ame2RRqa1V1H6A3rQ" data-callback="sendForm"></div>
+                <div class="sendButtonContainer">
+                    <button id='sendButton' onclick="enviarForm()"> Entrar </button>
+                </div>
+            </form>
             <a id="forgotPassword" href="#">Esqueci minha senha</a>
         </footer>
     </section>
@@ -43,8 +44,27 @@
     </section>
 </section>
 
-<body>
+</body>
   
      <script src="./app/model/FixModel-imdb.js"></script>
-</body>
+     <script type="text/javascript">
+
+        let form = document.querySelector('#register');
+
+        form.addEventListener('submit',  e => {
+            e.preventDefault();
+            let emailOrCpf = document.querySelector('#emailOrCpf');
+            let password = document.querySelector('#password');
+            if(!emailOrCpf.value || !password.value) {
+                alert('E-mail ou CPF e a senha são obrigatórios');
+                } else{
+                grecaptcha.execute();
+            }       
+            });
+
+        function sendForm(){
+            alert("reCAPTCHA funcionou");
+        }
+    </script>
+
 </html>
