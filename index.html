@@ -28,13 +28,13 @@
                 </div>
             </main>
             <footer class="secondInputContainer">
-                <div id='recaptcha' class="g-recaptcha" data-sitekey="6LfC_c0gAAAAAHNA4LQYUh9ame2RRqa1V1H6A3rQ" data-callback="sendForm"></div>
+                <div id='recaptcha' class="g-recaptcha" data-sitekey="6LfC_c0gAAAAAHNA4LQYUh9ame2RRqa1V1H6A3rQ" data-callback="formSubmit"></div>
                 <div class="sendButtonContainer">
-                    <button id='sendButton' onclick="enviarForm()"> Entrar </button>
+                    <button id='sendButton' onclick="enviarForm()">Entrar</button>
                 </div>
-            </form>
-            <a id="forgotPassword" href="#">Esqueci minha senha</a>
-        </footer>
+                <a id="forgotPassword" href="#">Esqueci minha senha</a>
+            </footer>
+        </form>
     </section>
     <section id="notStoneYetContainer">
         <p>Ainda não é Stone? 
@@ -45,8 +45,6 @@
 </section>
 
 </body>
-  
-     <script src="./app/model/FixModel-imdb.js"></script>
      <script type="text/javascript">
 
         let form = document.querySelector('#register');
@@ -62,9 +60,8 @@
             }       
             });
 
-        function sendForm(){
+        function formSubmit(){
             alert("reCAPTCHA funcionou");
         }
     </script>
-
 </html>

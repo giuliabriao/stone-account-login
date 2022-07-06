@@ -19,16 +19,16 @@ input {
 #loginCard {
   width: 20rem;
   height: 25rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-rows: 0.2fr 1fr 1fr;
+  grid-template-rows: 0.1fr auto;
   grid-template-areas: 
     "header"
-    "content"
-    "footer";
+    "form";
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: rgb(46 55 66 / 3%) 0px 4px 4px
@@ -42,15 +42,26 @@ input {
 
 #stoneLogo {
   grid-area: stoneLogo;
-  width: 6.3rem;
-  height: 1.6rem;
+  width: 6rem;
+  height: 1.5rem;
+  margin-top: 0.5rem
+}
+
+#register{
+  grid-area: form;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "content"
+  "footer"
 }
 
 .content{
   grid-area: content;
   display: flex;
   flex-direction: column;
-  margin: 1rem
+  margin: 1rem;
+  align-self: start;
 }
 
 #firstInputContainer {
@@ -79,27 +90,18 @@ input {
 footer{
   grid-area: footer;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr; */
   grid-template-areas: 
   "captcha"
   "button"
   "forgotPassword";
 }
 
-#captchaContainer {
+#recaptcha {
   grid-area: captcha;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-content: center;
-}
-
-#captchaLabel{
-  margin: 0.5rem;
-}
-
-#captcha {
-  width: 1.5rem;
-  margin: auto
 }
 
 .sendButtonContainer {
@@ -119,7 +121,6 @@ footer{
   font-family: "Sharon Sans", sans-serif;
   font-size: 13px;
   font-weight: 700;
-
 }
 
 #forgotPassword{
